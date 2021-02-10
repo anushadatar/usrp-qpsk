@@ -1,6 +1,9 @@
 function prepared_data = add_known_bits(header_size, transmit_data)
-    % Add known bits to information to transmit across the channel. 
-    % Input : header_size =   The number of bits in known bits. Note that
+    % Add known bits to information to transmit across the channel at
+    % the beginning of the transmitted signal. All known bits have the
+    % value of +1+j.
+    % Input : header_size =   The number of known bits to place in the
+    %                         transmit signal header. Note that
     %                         the system assumes that the receive side
     %                         already knows this value.
     %         transmit_data = An array of individual bits to transmit, 
