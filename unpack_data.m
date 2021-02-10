@@ -6,7 +6,7 @@ function processed_data = unpack_data(pulse_size, header_size, rotated_data)
     %         rotated_data   =   
     % Output: processed_data = 
     % Remove known data bits.
-    trimmed_data = rotated_data(header_size*pulse_size:end);
+    trimmed_data = rotated_data((header_size*pulse_size):end);
     % Decode bits.
     bits_i = [];
     bits_q = [];
