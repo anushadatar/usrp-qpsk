@@ -1,4 +1,4 @@
-function raw_data_array = process_raw_data_file(rx_fname)
+function rx = process_raw_data_file(rx_fname)
     % TODO docstring
     raw_data_file = fopen(rx_fname, 'r');
     raw_data_tmp = fread(raw_data_file,'float32');

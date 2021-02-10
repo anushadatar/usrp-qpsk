@@ -25,6 +25,8 @@ function package_data(N, symbol_period, header_size)
     tmp(1:2:end) = real(x_tx);
     tmp(2:2:end) = imag(x_tx);
     
+    stem(x_tx)
+    
     % SAVE DATA TO FILE
     f = fopen('tx.dat', 'wb');
     fwrite(f, tmp, 'float32');

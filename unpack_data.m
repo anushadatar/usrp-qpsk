@@ -8,7 +8,9 @@ function processed_data = unpack_data(pulse_size, header_size, rotated_data)
     % Remove known data bits.
     trimmed_data = rotated_data(header_size + 1:end);
     % Decode bits.
-    for i=pulse_size/2:pulse_size*len(trimmed_data)
+    bits_i = [];
+    bits_q = [];
+    for i=pulse_size/2:pulse_size:length(trimmed_data)
         bits_i = [bits_i real(trimmed_data(i))];
         bits_q = [bits_q imag(trimmed_data(i))];
     end
