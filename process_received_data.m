@@ -16,6 +16,8 @@ function processed_data = process_received_data(rx_fname)
     % at the beginning of the original transmission. There should be this
     % number of known bits in both the real and imaginary domains.
     header_size = 500;
+    % The size of the data bits to decode, not including the header.
+    data_size = 1000;
     
     % Actual data processing.
     % Process the raw data file into a more usable array.
@@ -24,7 +26,7 @@ function processed_data = process_received_data(rx_fname)
     freq_corrected_data = raw_data_array; % This line should call that function
     % Remove any noise from the beginning of the data. This array will
     % still include the known bits at the beginning.
-    trimmed_data = trim_data(pulse_size, header_size, freq_corrected_data);
+    trimmed_data = trim_data(pulse_size, header_size, data_size, freq_corrected_data);
     % Correct for any rotation in the data by using the known bits.
     rotated_data = rotate_data(header_size, trimmed_data);
     % Unpack (remove known bits, downsample, etc.) and decode.
