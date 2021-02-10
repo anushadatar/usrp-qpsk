@@ -28,7 +28,7 @@ function processed_data = process_received_data(rx_fname)
     % still include the known bits at the beginning.
     trimmed_data = trim_data(pulse_size, header_size, data_size, freq_corrected_data);
     % Correct for any rotation in the data by using the known bits.
-    rotated_data = rotate_data(header_size, trimmed_data);
+    rotated_data = rotate_data(header_size, trimmed_data, pulse_size);
     % Unpack (remove known bits, downsample, etc.) and decode.
     processed_data = unpack_data(pulse_size, header_size, rotated_data); % This line should call that function.
 end 

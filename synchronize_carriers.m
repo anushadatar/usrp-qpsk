@@ -12,7 +12,7 @@ function corr_data = synchronize_carriers(data)
     % FIND OFFSET AND ANGLE OF PULSE
     [~,I] = max(abs(f));
     f_delta = frequencies_shifted(I) / 4;
-    a_delta = (angle(f(I))) / 4;
+    a_delta = (angle(f(I)) + pi) / 4;
 
     % APPLY PHASE CORRECTION
     samples = 0:1:N-1;

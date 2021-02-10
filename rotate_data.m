@@ -1,4 +1,4 @@
-function rotated_data = rotate_data(header_size, received_data)
+function rotated_data = rotate_data(header_size, received_data, pulse_size)
     % Determine and correct for the phase offset in the data by observing
     % the change in the value of the known bits at the beginning of the
     % data (originally all set to +1+j) and rotating all of the data to 
@@ -19,7 +19,7 @@ function rotated_data = rotate_data(header_size, received_data)
     %                         correction factor indicated by the change in
     %                         the known bits.
     % Extract the average value of the bits in the header of the data.
-    known_bits = received_data(1:header_size); 
+    known_bits = received_data(1:header_size*pulse_size); 
     average_known_bit_value = mean(known_bits);
     
     % Find angle of rotation of known bits.
