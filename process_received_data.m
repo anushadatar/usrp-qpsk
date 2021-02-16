@@ -23,7 +23,8 @@ function processed_data = process_received_data(rx_fname)
     % Process the raw data file into a more usable array.
     raw_data_array = process_raw_data_file(rx_fname);
     % TODO Apply frequency offset correction
-    freq_corrected_data = synchronize_carriers(raw_data_array); % This line should call that function
+    %freq_corrected_data = synchronize_carriers(raw_data_array); % This line should call that function
+    freq_corrected_data = costas_loop(raw_data_array);
     % Remove any noise from the beginning of the data. This array will
     % still include the known bits at the beginning.
     trimmed_data = trim_data(pulse_size, header_size, data_size, freq_corrected_data);
