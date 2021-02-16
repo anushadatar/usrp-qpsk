@@ -3,7 +3,10 @@ function corr_data = synchronize_carriers(data)
     % end of the system.
     % Input : data = Original received data.
     % Output: corr_data = Data corrected for frequenct and phase offset.
-
+    
+    % NORMALIZE DATA
+    data = data./rms(data);
+    
     % CREATE FFT
     N = length(real(data));
     frequencies_shifted = (linspace(-pi, pi-2/N*pi, N) + pi/N*mod(N,2));
