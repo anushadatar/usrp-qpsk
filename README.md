@@ -1,4 +1,5 @@
 # QPSK Communication
+*Mark Goldwater and Anusha Datar*
 Olin College SP21 Principles of Wireless Communications Lab 1.
 # Summary
 This repository contains code, data, and documentation associated with a 
