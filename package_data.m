@@ -1,10 +1,13 @@
 function package_data(N, symbol_period, header_size)
     % Format a transmit file ('tx.dat') for the usrp to send.
-    % Input : N = Number of random data bits to generate
-    %         symbol_period = Number of samples between rectangular pulse
-    %                         symbols
-    % Output: 'tx.dat' = File saved with data ready to be transmitted via
-    %                    usrp
+    % Input Parameters: 
+    % N             : Number of random data bits to generate
+    % symbol_period : Number of samples between rectangular pulse
+    %                 symbols
+    % header_size   : Number of bits in known data header.
+    % Returns: 
+    % 'tx.dat'      : File saved with data ready to be transmitted via
+    %                 usrp
    
     % GENERATE BITS
     I_raw = sign(randn(N,1))';
